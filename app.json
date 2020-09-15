@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/adopt/adopt",
+    "pages/my/my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "铲屎官",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "color": "#2E2E2E",
+    "backgroundColor": "#ffffff",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/index.png",
+        "selectedIconPath": "/image/indexSel.png"
+      },
+      {
+        "pagePath": "pages/adopt/adopt",
+        "text": "领养",
+        "iconPath": "/image/adopt.png",
+        "selectedIconPath": "/image/adoptSel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/image/my.png",
+        "selectedIconPath": "/image/mySel.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

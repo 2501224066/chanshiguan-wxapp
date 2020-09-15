@@ -1,0 +1,9 @@
+// 图片截取第一张
+var oneImg = function (str, param = ";") {
+  var arr = str.split(param);
+  return arr[0]
+}
+
+module.exports = {
+  oneImg: oneImg
+}

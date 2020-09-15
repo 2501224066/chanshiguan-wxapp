@@ -1,0 +1,37 @@
+<wxs src="../../utils/index.wxs" module="util" />
+
+<view class="container">
+	<view>
+		<view class="list" wx:for="{{list}}" wx:key wx:if="{{index%2 == 0}}">
+			<image class="viedo-icon" wx:if="{{item.petDiaryDto.videoId}}" src="/image/video.png"></image>
+			<image class="img" src="{{util.oneImg(item.petDiaryDto.mediaUrl)}}" mode="widthFix"></image>
+			<view class="about">
+				<view class="title">{{item.petDiaryDto.title}}</view>
+				<view class="about-bottom">
+					<image class="header" src="{{item.petDiaryDto.headImg}}">
+					</image>
+					<view class="name">{{item.petDiaryDto.petName}}</view>
+					<image class="absorb" src="/image/absorb.png"></image>
+					<view class="num">255</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view>
+		<view class="list" wx:for="{{list}}" wx:key wx:if="{{index%2 == 1}}">
+			<image class="viedo-icon" wx:if="{{item.petDiaryDto.videoId}}" src="/image/video.png"></image>
+			<image class="img" src="{{util.oneImg(item.petDiaryDto.mediaUrl)}}" mode="widthFix"></image>
+			<view class="about">
+				<view class="title">{{item.petDiaryDto.title}}</view>
+				<view class="about-bottom">
+					<image class="header" src="{{item.petDiaryDto.headImg}}">
+					</image>
+					<view class="name">{{item.petDiaryDto.petName}}</view>
+					<image class="absorb" src="/image/absorb.png"></image>
+					<view class="num">255</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  padding: 20rpx 2%;
+  justify-content: space-between;
+}
+
+.container>view {
+  width: 49%;
+}
+
+.list{
+  border-radius: 8rpx;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  border-radius: 8rpx;
+}
+
+.about {
+  padding: 20rpx 10rpx;
+}
+
+.title{
+  font-size: 24rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.about-bottom{
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+}
+
+.name {
+  font-size: 24rpx;
+  margin: 0 10rpx;
+  flex: 1
+}
+
+.absorb{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.num {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.viedo-icon{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
