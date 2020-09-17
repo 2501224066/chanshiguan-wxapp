@@ -22,7 +22,7 @@
 }
 
 .about {
-  padding: 20rpx 10rpx;
+  padding: 10rpx 10rpx 20rpx 10rpx;
 }
 
 .title{
@@ -43,7 +43,7 @@
 }
 
 .name {
-  font-size: 24rpx;
+  font-size: 22rpx;
   margin: 0 10rpx;
   flex: 1
 }
@@ -51,7 +51,7 @@
 .absorb{
   width: 30rpx;
   height: 30rpx;
-  margin-right: 10rpx;
+  margin-right: 4rpx;
 }
 
 .num {

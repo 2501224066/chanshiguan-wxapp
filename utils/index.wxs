@@ -4,6 +4,25 @@ var oneImg = function (str, param = ";") {
   return arr[0]
 }
 
+// 解析时间戳年
+function time(milliseconds) {
+  var now = getDate()
+  if (((now.getTime() - milliseconds) / 1000) < 3600) {
+    return Math.floor(((now.getTime() - milliseconds) / 1000) / 60) + "分钟前"
+  }
+
+  if (((now.getTime() - milliseconds) / 1000) < 86400) {
+    return Math.floor(((now.getTime() - milliseconds) / 1000) / 3600) + "小时前"
+  }
+
+  var date = getDate(milliseconds)
+  Y = date.getFullYear()
+  m = date.getMonth() + 1
+  d = date.getDate()
+  return Y + "." + m + "." + d
+}
+
 module.exports = {
-  oneImg: oneImg
+  oneImg: oneImg,
+  time: time
 }

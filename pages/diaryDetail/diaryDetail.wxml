@@ -1,0 +1,68 @@
+<wxs src="../../utils/index.wxs" module="util" />
+
+<view class="container">
+	<view class="top">
+		<image class="header" src="{{petDiary.petImg}}"></image>
+		<view class="name">{{petDiary.petName}}</view>
+		<image class="follow" src="/image/follow.png"></image>
+	</view>
+
+	<!-- 轮播 -->
+	<view class="img-box">
+		<view class="img-num">{{current+1}}/{{imgList.length}}</view>
+		<swiper style="height:{{imgheights[current]}}rpx" bindchange="bindchange" current="{{current}}">
+			<block wx:for="{{imgList}}" wx:key>
+				<swiper-item>
+					<image src="{{item}}" mode="aspectFill" bindload="imageLoad" data-id='{{index}}' bindtap="lookImg"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<view class="img-box-2">
+			<image class="{{index==current? 'avtive' : ''}}" wx:for="{{imgList}}" wx:key src="{{item}}" 
+			bindtap="check" data-key="{{index}}"></image>
+		</view>
+	</view>
+
+	<view class="body">
+		<view class="num">{{petDiary.likes}}次云吸</view>
+		<view class="title">{{petDiary.title}}</view>
+		<view class="content">{{petDiary.content}}</view>
+		<view class="time">发表于{{util.time(petDiary.createdTime)}}</view>
+	</view>
+</view>
+
+<view class="comment">
+	<view class="comment-num">全部评论 {{commentList.length}}</view>
+	<view wx:for="{{commentList}}">
+		<view class="comment-body">
+			<view class="comment-header">
+				<image src="{{item.headImg ? item.headImg : '/image/header.png'}}"></image>
+			</view>
+			<view class="comment-c">
+				<view>{{item.nickName}}
+					<image class="like" src="/image/like.png"></image>
+				</view>
+				<view>{{item.content}}</view>
+				<view>{{util.time(item.createdTime)}}</view>
+				<!-- 二级评论 -->
+				<view class="comment-body" wx:for="{{item.childs}}">
+					<view class="comment-header2">
+						<image src="{{item.headImg ? item.headImg : '/image/header.png'}}"></image>
+					</view>
+					<view class="comment-c">
+						<view>{{item.nickName}}
+							<image class="like" src="/image/like.png"></image>
+						</view>
+						<view>{{item.content}}</view>
+						<view>{{util.time(item.createdTime)}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="share">
+	<view><image src="/image/absorb.png"></image>云吸</view>
+	<view><image src="/image/wx.png"></image>分享到微信</view>
+</view>

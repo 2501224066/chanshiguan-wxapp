@@ -56,7 +56,15 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "日记详情-图片",
+					"pathName": "pages/diaryDetail/diaryDetail",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }

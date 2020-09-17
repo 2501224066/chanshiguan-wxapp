@@ -23,7 +23,7 @@ Page({
         this.setData({
           list: this.data.list.concat(res.data)
         })
-      }else{
+      } else {
         this.setData({
           list: res.data
         })
@@ -37,5 +37,18 @@ Page({
       page: this.data.page + 1
     })
     this.getData(true)
+  },
+
+  // 跳转详情页
+  toDetail(e) {
+    if (e.currentTarget.dataset.videoid) {
+      wx.navigateTo({
+        url: '/pages/diaryDetail2/diaryDetail2?id=' + e.currentTarget.dataset.id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/diaryDetail/diaryDetail?id=' + e.currentTarget.dataset.id,
+      })
+    }
   }
 })

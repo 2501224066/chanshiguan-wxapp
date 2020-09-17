@@ -2,7 +2,8 @@
 
 <view class="container">
 	<view>
-		<view class="list" wx:for="{{list}}" wx:key wx:if="{{index%2 == 0}}">
+		<view class="list" wx:for="{{list}}" wx:key wx:if="{{index%2 == 0}}"
+		bindtap="toDetail"  data-videoid="{{item.petDiaryDto.videoId}}" data-id="{{item.petDiaryDto.id}}">
 			<image class="viedo-icon" wx:if="{{item.petDiaryDto.videoId}}" src="/image/video.png"></image>
 			<image class="img" src="{{util.oneImg(item.petDiaryDto.mediaUrl)}}" mode="widthFix"></image>
 			<view class="about">
@@ -19,7 +20,8 @@
 	</view>
 
 	<view>
-		<view class="list" wx:for="{{list}}" wx:key wx:if="{{index%2 == 1}}">
+		<view class="list" wx:for="{{list}}" wx:key wx:if="{{index%2 == 1}}"
+		bindtap="toDetail"  data-videoid="{{item.petDiaryDto.videoId}}" data-id="{{item.petDiaryDto.id}}">
 			<image class="viedo-icon" wx:if="{{item.petDiaryDto.videoId}}" src="/image/video.png"></image>
 			<image class="img" src="{{util.oneImg(item.petDiaryDto.mediaUrl)}}" mode="widthFix"></image>
 			<view class="about">
