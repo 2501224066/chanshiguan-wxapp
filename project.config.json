@@ -63,6 +63,19 @@
 					"pathName": "pages/diaryDetail/diaryDetail",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日记详情-视频",
+					"pathName": "pages/diaryDetail2/diaryDetail2",
+					"scene": null
 				}
 			]
 		}

@@ -1,2 +1,45 @@
-<!--pages/diaryDetail2/diaryDetail2.wxml-->
-<text>pages/diaryDetail2/diaryDetail2.wxml</text>
+<swiper bindchange="bindchange" bindchange="bindchange" current="{{current}}" vertical="{{true}}">
+	<block wx:for="{{videoList}}" wx:key>
+		<swiper-item bindtap="opVideo">
+		<image wx:if="{{stopShow}}" class="stop" src="/image/stop.png"></image>
+			<view class="video" >
+				<video id="v{{item.id}}" autoplay="{{false}}" loop="{{true}}" enable-play-gesture="{{true}}" show-fullscreen-btn="{{false}}" 
+				controls="{{false}}" enable-play-gesture="{{false}}" src="{{item.url}}"></video>
+			</view>
+		</swiper-item>
+	</block>
+</swiper>
+
+<view class="about">
+	<view class="name">@二狗今天很欢乐<span>2019-09-12</span></view>
+	<view class="title">很会配合的狗子</view>
+	<view class="content">主动营业</view>
+</view>
+
+<view class="op">
+	<image wx:if="{{opShow}}" class="header" src="/image/header.png"></image>
+	<view wx:if="{{opShow}}">
+		<image src="/image/like2.png"></image>
+		<!--<image src="/image/likeSel2.png"></image>-->
+		<view>点赞</view>
+	</view>
+	<view wx:if="{{opShow}}">
+		<image src="/image/chat.png"></image>
+		<view>评论</view>
+	</view>
+	<view wx:if="{{opShow}}">
+		<image src="/image/share.png"></image>
+		<view>分享</view>
+	</view>
+	<view bindtap="opShow">
+		<image wx:if="{{opShow}}" src="/image/clean.png"></image>
+		<image wx:else src="/image/cleanSel.png"></image>
+	</view>
+</view>
+
+<view class="chat">
+	<view>
+		<image src="/image/pen.png"></image>
+		<input type="text" placeholder="发条云吸弹幕"></input>
+	</view>
+</view>

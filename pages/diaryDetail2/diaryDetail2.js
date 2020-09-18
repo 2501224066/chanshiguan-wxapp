@@ -1,66 +1,53 @@
-// pages/diaryDetail2/diaryDetail2.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    opShow: true,
+    videoList: [{
+        id: 0,
+        url: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+      },
+      {
+        id: 1,
+        url: "http://vjs.zencdn.net/v/oceans.mp4"
+      },
+      {
+        id: 2,
+        url: "https://www.w3school.com.cn/example/html5/mov_bbb.mp4"
+      }
+    ],
+    current: 0,
+    stopShow: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    wx.createVideoContext('v' + this.data.current).play()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 开启关闭操作侧栏
+  opShow() {
+    this.setData({
+      opShow: !this.data.opShow
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  // 播放,暂停视频
+  opVideo() {
+    if (this.data.stopShow) {
+      wx.createVideoContext('v' + this.data.current).play()
+    } else {
+      wx.createVideoContext('v' + this.data.current).stop()
+    }
+    this.setData({
+      stopShow: !this.data.stopShow
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 切换视频
+  bindchange(e) {
+    wx.createVideoContext('v' + this.data.current).stop()
+    wx.createVideoContext('v' + e.detail.current).play()
+    this.setData({
+      current: e.detail.current,
+      stopShow: false
+    })
   }
 })
